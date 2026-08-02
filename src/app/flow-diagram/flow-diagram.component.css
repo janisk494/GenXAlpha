@@ -1,0 +1,39 @@
+.flow-diagram {
+  width: 100%;
+  min-width: 680px;
+  height: auto;
+  overflow: visible;
+}
+
+.flow-link {
+  fill: none;
+  opacity: 0.55;
+  stroke-linecap: round;
+  stroke-dasharray: 10 8;
+  animation: flow 1.6s linear infinite;
+}
+
+@keyframes flow {
+  to {
+    stroke-dashoffset: -36;
+  }
+}
+
+.node-box {
+  fill: var(--ink-soft);
+  stroke-width: 1.5;
+}
+
+.node-text {
+  fill: #e7eaf3;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  dominant-baseline: middle;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flow-link {
+    animation: none;
+  }
+}

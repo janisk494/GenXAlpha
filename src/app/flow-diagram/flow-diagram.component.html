@@ -1,0 +1,30 @@
+<svg
+  viewBox="0 0 1060 362"
+  role="img"
+  aria-label="Flow diagram: SAP and ERP core, data and platforms, and ops and CRM systems feed a clean composable core and an AI and automation layer, which together drive faster decisions, lower cost to serve, and new revenue plays"
+  class="flow-diagram"
+>
+  <title>Enterprise value flow</title>
+
+  <path
+    *ngFor="let l of links"
+    [attr.d]="path(l)"
+    class="flow-link"
+    [style.stroke]="l.color"
+    [style.stroke-width]="l.width"
+  ></path>
+
+  <g *ngFor="let n of nodes" class="flow-node">
+    <rect
+      [attr.x]="n.x"
+      [attr.y]="n.y"
+      [attr.width]="n.w"
+      [attr.height]="n.h"
+      rx="8"
+      class="node-box"
+      [style.stroke]="n.color"
+    ></rect>
+    <circle [attr.cx]="n.x + 18" [attr.cy]="n.y + n.h / 2" r="4.5" [style.fill]="n.color"></circle>
+    <text [attr.x]="n.x + 32" [attr.y]="n.y + n.h / 2" class="node-text">{{ n.label }}</text>
+  </g>
+</svg>

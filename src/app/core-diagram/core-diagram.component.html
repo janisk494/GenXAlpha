@@ -1,0 +1,30 @@
+<svg
+  viewBox="0 0 320 320"
+  role="img"
+  aria-label="Diagram of a central enterprise core connected to six capability nodes"
+  class="core-diagram"
+  [class.is-animated]="animated"
+>
+  <title>Connected enterprise core</title>
+  <circle [attr.cx]="center" [attr.cy]="center" r="150" class="ring-outer" />
+  <circle [attr.cx]="center" [attr.cy]="center" r="150" class="ring-sweep" />
+
+  <line
+    *ngFor="let n of nodes"
+    [attr.x1]="center"
+    [attr.y1]="center"
+    [attr.x2]="x(n.angle)"
+    [attr.y2]="y(n.angle)"
+    [style.stroke]="n.color"
+    class="spoke"
+  ></line>
+
+  <g *ngFor="let n of nodes; let i = index" class="node-group" [style.animation-delay.ms]="i * 220">
+    <circle [attr.cx]="x(n.angle)" [attr.cy]="y(n.angle)" r="20" class="node" [style.fill]="n.color" [style.stroke]="n.color" />
+    <text [attr.x]="x(n.angle)" [attr.y]="y(n.angle)" class="node-label">{{ n.code }}</text>
+  </g>
+
+  <circle [attr.cx]="center" [attr.cy]="center" r="46" class="core" />
+  <text [attr.x]="center" [attr.y]="center - 4" class="core-label">Core</text>
+  <text [attr.x]="center" [attr.y]="center + 14" class="core-label-sub">GX</text>
+</svg>

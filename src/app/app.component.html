@@ -1,0 +1,282 @@
+<header class="site-nav">
+  <div class="wrap nav-row">
+    <a href="#top" class="brand">
+      <span class="brand-mark">GX</span>
+      <span class="brand-word">GenXAlpha</span>
+    </a>
+    <nav class="nav-links d-none d-lg-flex">
+      <a href="#capabilities">Capabilities</a>
+      <a href="#technology">Technology</a>
+      <a href="#core">Enterprise core</a>
+      <a href="#flow">Flow</a>
+      <a href="#insights">Insights</a>
+    </nav>
+    <a href="#contact" class="nav-cta d-none d-lg-inline-flex">Talk to us</a>
+    <button
+      class="nav-toggle collapsed d-lg-none"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#mobileNav"
+      aria-controls="mobileNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="collapse d-lg-none" id="mobileNav">
+    <nav class="nav-links-mobile">
+      <a href="#capabilities">Capabilities</a>
+      <a href="#technology">Technology</a>
+      <a href="#core">Enterprise core</a>
+      <a href="#flow">Flow</a>
+      <a href="#insights">Insights</a>
+      <a href="#contact" class="nav-cta-mobile">Talk to us</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-row row align-items-center g-4 g-lg-5">
+      <div class="hero-copy col-12 col-lg-7">
+        <p class="eyebrow">SAP · AI engineering · cloud-native delivery</p>
+        <h1>Modernize the core.<br />Activate intelligence.</h1>
+        <p class="hero-sub">
+          GenXAlpha combines SAP expertise, AI engineering, and cloud-native delivery to turn
+          complex enterprise landscapes into adaptive, intelligent businesses.
+        </p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">Talk to us</a>
+          <a href="#capabilities" class="btn btn-ghost">See capabilities</a>
+        </div>
+      </div>
+      <div class="hero-diagram col-12 col-lg-5">
+        <gx-core-diagram [animated]="true"></gx-core-diagram>
+      </div>
+    </div>
+  </section>
+
+  <section class="glance">
+    <div class="wrap glance-row row align-items-center g-4">
+      <div class="glance-head col-12 col-lg-5">
+        <p class="eyebrow eyebrow-dark">At a glance</p>
+        <h2>One partner across the<br />transformation lifecycle</h2>
+      </div>
+      <div class="glance-stats col-12 col-lg-7 row row-cols-2 row-cols-md-4 g-0">
+        <div class="glance-stat col" *ngFor="let s of glanceStats" [style.--accent]="s.color">
+          <span class="glance-value">{{ s.value }}</span>
+          <p class="glance-label">{{ s.label }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="strip">
+    <div class="wrap strip-row row g-4 g-lg-5">
+      <div class="strip-copy col-12 col-lg-8">
+        <h2 class="strip-head">Enterprise experience. AI-native execution.</h2>
+        <p><strong>Gen X</strong> represents decades of enterprise knowledge: ERP landscapes,
+          mission-critical processes, governance, and the realities behind transformation.</p>
+        <p><strong>Gen Alpha</strong> brings AI-native thinking: agents, automation, cloud
+          platforms, rapid engineering, and technology designed for continuous evolution.</p>
+        <p class="strip-line">One team connecting proven enterprise depth with the speed of
+          what's next.</p>
+      </div>
+      <div class="strip-pillars col-12 col-lg-4">
+        <div class="pillar">
+          <span class="pillar-num">01</span>
+          <p>Proven enterprise depth</p>
+        </div>
+        <div class="pillar">
+          <span class="pillar-num">02</span>
+          <p>Modern technology</p>
+        </div>
+        <div class="pillar">
+          <span class="pillar-num">03</span>
+          <p>Value without disruption</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="thesis">
+    <div class="wrap">
+      <p class="thesis-line">From system of record<span class="thesis-arrow">to system of intelligence.</span></p>
+      <p class="thesis-sub">Connect core business processes, trusted data, cloud platform, and AI
+        into an enterprise that can sense, decide, and act faster.</p>
+    </div>
+  </section>
+
+  <section class="capabilities" id="capabilities">
+    <div class="wrap">
+      <p class="eyebrow eyebrow-dark">What we do</p>
+      <h2 class="section-head">Capabilities that move the whole enterprise.</h2>
+      <div class="cap-grid row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-0">
+        <div class="col" *ngFor="let c of capabilities">
+          <div class="cap-card" [style.--accent]="c.color">
+            <div>
+              <span class="cap-code">{{ c.code }}</span>
+              <p class="cap-name">{{ c.name }}</p>
+              <p class="cap-desc">{{ c.description }}</p>
+            </div>
+            <div class="cap-tags">
+              <span class="cap-tag" *ngFor="let t of c.tags">{{ t }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="core-section" id="core">
+    <div class="wrap core-row row align-items-center g-4 g-lg-5">
+      <div class="core-diagram-small col-12 col-lg-5">
+        <gx-core-diagram [animated]="false"></gx-core-diagram>
+      </div>
+      <div class="core-copy col-12 col-lg-7">
+        <p class="eyebrow eyebrow-dark">One transformation system</p>
+        <h2>See the whole system.<br />Prioritize the next move.</h2>
+        <ul class="core-list">
+          <li>Build a clean, composable enterprise core</li>
+          <li>AI that works inside the enterprise, not bolted onto it</li>
+          <li>Intelligence embedded directly in the workflow</li>
+        </ul>
+        <p class="core-sub">Modern technology. One connected architecture — technology grounded in
+          business reality and shaped by the operating model, not the other way around.</p>
+        <div class="core-tags">
+          <span>Process</span>
+          <span>Data</span>
+          <span>Integration</span>
+          <span>Governance</span>
+          <span>Adoption</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="technology" id="technology">
+    <div class="wrap">
+      <p class="eyebrow eyebrow-dark">What we build on</p>
+      <h2 class="section-head">Technology grounded in business reality.</h2>
+      <p class="tech-sub">We select technology for business fit, interoperability, security, and
+        long-term maintainability — not novelty alone.</p>
+      <div class="tech-table">
+        <div class="tech-row" *ngFor="let row of techStack">
+          <span class="tech-category">{{ row.category }}</span>
+          <div class="tech-items">
+            <span class="tech-item" *ngFor="let item of row.items">{{ item }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="flow" id="flow">
+    <div class="wrap">
+      <p class="eyebrow eyebrow-dark">End to end</p>
+      <h2 class="section-head">How value flows through the enterprise.</h2>
+      <p class="flow-sub">Enterprise systems feed a clean core and an AI layer working in
+        concert — together they drive faster decisions, lower cost to serve, and new revenue
+        plays.</p>
+      <div class="flow-diagram-wrap">
+        <gx-flow-diagram></gx-flow-diagram>
+      </div>
+
+      <div class="delivery">
+        <p class="delivery-head">Move from ECC to an intelligent clean core in four stages.</p>
+        <div class="delivery-row">
+          <ng-container *ngFor="let s of deliveryStages; let last = last">
+            <div class="delivery-stage" [style.--accent]="s.color">
+              <span class="delivery-step">{{ s.step }}</span>
+              <span class="delivery-label">{{ s.label }}</span>
+            </div>
+            <span class="delivery-arrow" *ngIf="!last">→</span>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="insights" id="insights">
+    <div class="wrap">
+      <p class="eyebrow eyebrow-dark">Ideas for the next enterprise</p>
+      <h2 class="section-head">Perspectives worth building on.</h2>
+      <div class="insight-grid row row-cols-1 row-cols-md-3 g-4">
+        <div class="col" *ngFor="let i of insights">
+          <a href="#contact" class="insight-card" [style.--accent]="i.color">
+            <span class="insight-tag">{{ i.tag }}</span>
+            <p class="insight-title">{{ i.title }}</p>
+            <span class="insight-read">Read the perspective →</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="knowledge">
+    <div class="wrap knowledge-row row align-items-center g-4">
+      <h2 class="col-12 col-md-6">Transformation lasts<br />when knowledge stays.</h2>
+      <p class="col-12 col-md-6">We combine consulting rigor with practical, hands-on academies,
+        delivery coaching, and embedded AI knowledge — so what we build transfers to your team,
+        not just the workflows, decisions, and people your enterprise actually runs on.</p>
+    </div>
+  </section>
+
+  <section class="faq">
+    <div class="wrap">
+      <p class="eyebrow eyebrow-dark">Common questions</p>
+      <h2 class="section-head">Start with what matters.</h2>
+      <div class="faq-list">
+        <details class="faq-item" *ngFor="let f of faqs">
+          <summary>{{ f.q }}<span class="faq-icon">+</span></summary>
+          <p>{{ f.a }}</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" id="contact">
+    <div class="wrap cta-row row g-4 g-lg-5">
+      <div class="cta-copy col-12 col-lg-7">
+        <h2>Let's make the future<br />work in the present.</h2>
+        <p>Today's enterprise challenges. Tomorrow's AI-driven future.</p>
+        <p class="cta-fine">Tell us where your enterprise needs to move. We'll bring a clear
+          point of view and the right first questions.</p>
+      </div>
+      <form class="cta-form col-12 col-lg-5" (submit)="$event.preventDefault()">
+        <label for="name">Name</label>
+        <input id="name" type="text" name="name" placeholder="Your name" autocomplete="name" />
+        <label for="email">Work email</label>
+        <input id="email" type="email" name="email" placeholder="you@company.com" autocomplete="email" />
+        <label for="topic">What would you like to explore?</label>
+        <select id="topic" name="topic">
+          <option>SAP transformation</option>
+          <option>AI solutions and automation</option>
+          <option>Data, analytics and integration</option>
+          <option>Digital engineering</option>
+          <option>Cloud and cyber resilience</option>
+          <option>Strategy, change and adoption</option>
+        </select>
+        <label for="message">What's the challenge?</label>
+        <textarea id="message" name="message" rows="3" placeholder="A brief on where your enterprise needs to move"></textarea>
+        <button type="submit" class="btn btn-primary btn-wide">Send it over</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-row">
+    <div class="footer-brand">
+      <span>© {{ year }} GenXAlpha Technologies Private Limited</span>
+      <span class="footer-tagline">Enterprise depth × AI velocity</span>
+    </div>
+    <div class="footer-links">
+      <a href="#capabilities">Capabilities</a>
+      <a href="#technology">Technology</a>
+      <a href="#core">Enterprise core</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</footer>
