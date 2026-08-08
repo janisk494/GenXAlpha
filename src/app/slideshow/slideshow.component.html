@@ -1,0 +1,28 @@
+<div class="slideshow" (mouseenter)="stop()" (mouseleave)="start()">
+  <div class="slideshow-track">
+    <div
+      class="slideshow-slide"
+      *ngFor="let s of slides; let i = index"
+      [class.is-active]="i === active"
+      [style.background-image]="'url(' + s.image + ')'"
+    >
+      <div class="slideshow-scrim"></div>
+      <div class="slideshow-caption" *ngIf="i === active">
+        <span class="slideshow-tag">{{ s.tag }}</span>
+        <h3>{{ s.title }}</h3>
+        <p>{{ s.desc }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="slideshow-dots">
+    <button
+      *ngFor="let s of slides; let i = index"
+      class="slideshow-dot"
+      type="button"
+      [class.is-active]="i === active"
+      (click)="goTo(i)"
+      [attr.aria-label]="'Go to slide ' + (i + 1)"
+    ></button>
+  </div>
+</div>

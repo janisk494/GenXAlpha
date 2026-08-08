@@ -1,15 +1,13 @@
 <header class="site-nav">
   <div class="wrap nav-row">
     <a href="#top" class="brand">
-      <span class="brand-mark">GX</span>
-      <span class="brand-word">GenXAlpha</span>
+      <img src="assets/brand/logo.png" alt="GenXAlpha" class="brand-logo" />
     </a>
     <nav class="nav-links d-none d-lg-flex">
       <a href="#capabilities">Capabilities</a>
       <a href="#technology">Technology</a>
-      <a href="#core">Enterprise core</a>
+      <a href="#industries">Industries</a>
       <a href="#flow">Flow</a>
-      <a href="#insights">Insights</a>
     </nav>
     <a href="#contact" class="nav-cta d-none d-lg-inline-flex">Talk to us</a>
     <button
@@ -28,27 +26,30 @@
     <nav class="nav-links-mobile">
       <a href="#capabilities">Capabilities</a>
       <a href="#technology">Technology</a>
-      <a href="#core">Enterprise core</a>
+      <a href="#industries">Industries</a>
       <a href="#flow">Flow</a>
-      <a href="#insights">Insights</a>
       <a href="#contact" class="nav-cta-mobile">Talk to us</a>
     </nav>
   </div>
 </header>
 
 <main id="top">
+  <section class="gallery gallery-top">
+    <gx-slideshow></gx-slideshow>
+  </section>
+
   <section class="hero">
     <div class="wrap hero-row row align-items-center g-4 g-lg-5">
       <div class="hero-copy col-12 col-lg-7">
-        <p class="eyebrow">SAP · AI engineering · cloud-native delivery</p>
-        <h1>Modernize the core.<br />Activate intelligence.</h1>
+        <p class="eyebrow eyebrow-dark">SAP · AI engineering · cloud-native delivery</p>
+        <h1>Modernize the core.<br /><span class="text-gradient">Activate intelligence.</span></h1>
         <p class="hero-sub">
           GenXAlpha combines SAP expertise, AI engineering, and cloud-native delivery to turn
           complex enterprise landscapes into adaptive, intelligent businesses.
         </p>
         <div class="hero-actions">
           <a href="#contact" class="btn btn-primary">Talk to us</a>
-          <a href="#capabilities" class="btn btn-ghost">See capabilities</a>
+          <a href="#capabilities" class="btn btn-gradient-outline">See capabilities</a>
         </div>
       </div>
       <div class="hero-diagram col-12 col-lg-5">
@@ -72,84 +73,54 @@
     </div>
   </section>
 
-  <section class="strip">
-    <div class="wrap strip-row row g-4 g-lg-5">
-      <div class="strip-copy col-12 col-lg-8">
-        <h2 class="strip-head">Enterprise experience. AI-native execution.</h2>
-        <p><strong>Gen X</strong> represents decades of enterprise knowledge: ERP landscapes,
-          mission-critical processes, governance, and the realities behind transformation.</p>
-        <p><strong>Gen Alpha</strong> brings AI-native thinking: agents, automation, cloud
-          platforms, rapid engineering, and technology designed for continuous evolution.</p>
-        <p class="strip-line">One team connecting proven enterprise depth with the speed of
-          what's next.</p>
-      </div>
-      <div class="strip-pillars col-12 col-lg-4">
-        <div class="pillar">
-          <span class="pillar-num">01</span>
-          <p>Proven enterprise depth</p>
-        </div>
-        <div class="pillar">
-          <span class="pillar-num">02</span>
-          <p>Modern technology</p>
-        </div>
-        <div class="pillar">
-          <span class="pillar-num">03</span>
-          <p>Value without disruption</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="thesis">
-    <div class="wrap">
-      <p class="thesis-line">From system of record<span class="thesis-arrow">to system of intelligence.</span></p>
-      <p class="thesis-sub">Connect core business processes, trusted data, cloud platform, and AI
-        into an enterprise that can sense, decide, and act faster.</p>
-    </div>
-  </section>
-
   <section class="capabilities" id="capabilities">
     <div class="wrap">
-      <p class="eyebrow eyebrow-dark">What we do</p>
+      <p class="eyebrow">What we do</p>
       <h2 class="section-head">Capabilities that move the whole enterprise.</h2>
-      <div class="cap-grid row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-0">
-        <div class="col" *ngFor="let c of capabilities">
-          <div class="cap-card" [style.--accent]="c.color">
-            <div>
-              <span class="cap-code">{{ c.code }}</span>
-              <p class="cap-name">{{ c.name }}</p>
-              <p class="cap-desc">{{ c.description }}</p>
+
+      <div class="cap-rows">
+        <div class="cap-row row align-items-center g-4 g-lg-5" *ngFor="let c of capabilities; let i = index" [class.cap-row-reverse]="i % 2 === 1">
+          <div class="cap-row-text col-12 col-lg-5" [style.--accent]="c.color">
+            <div class="cap-icon" [ngSwitch]="c.code">
+              <svg *ngSwitchCase="'S/4'" viewBox="0 0 24 24" fill="currentColor">
+                <rect x="4" y="4" width="16" height="4" rx="1.5" />
+                <rect x="4" y="10" width="16" height="4" rx="1.5" />
+                <rect x="4" y="16" width="16" height="4" rx="1.5" />
+              </svg>
+              <svg *ngSwitchCase="'AI'" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2 L14 10 L22 12 L14 14 L12 22 L10 14 L2 12 L10 10 Z" />
+              </svg>
+              <svg *ngSwitchCase="'DI'" viewBox="0 0 24 24" fill="currentColor">
+                <rect x="4" y="12" width="4" height="8" rx="1" />
+                <rect x="10" y="7" width="4" height="13" rx="1" />
+                <rect x="16" y="3" width="4" height="17" rx="1" />
+              </svg>
+              <svg *ngSwitchCase="'DE'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round">
+                <path d="M12 3 L20 7.5 V16.5 L12 21 L4 16.5 V7.5 Z" />
+              </svg>
+              <svg *ngSwitchCase="'CCR'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round">
+                <path d="M12 3 L19 6 V11 C19 16 16 19.5 12 21 C8 19.5 5 16 5 11 V6 Z" />
+              </svg>
+              <svg *ngSwitchCase="'SCA'" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8" />
+                <path d="M15 9 L11 11 L9 15 L13 13 Z" fill="currentColor" />
+              </svg>
             </div>
+            <span class="cap-code">{{ c.code }}</span>
+            <p class="cap-name">{{ c.name }}</p>
+            <p class="cap-desc">{{ c.description }}</p>
             <div class="cap-tags">
               <span class="cap-tag" *ngFor="let t of c.tags">{{ t }}</span>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="core-section" id="core">
-    <div class="wrap core-row row align-items-center g-4 g-lg-5">
-      <div class="core-diagram-small col-12 col-lg-5">
-        <gx-core-diagram [animated]="false"></gx-core-diagram>
-      </div>
-      <div class="core-copy col-12 col-lg-7">
-        <p class="eyebrow eyebrow-dark">One transformation system</p>
-        <h2>See the whole system.<br />Prioritize the next move.</h2>
-        <ul class="core-list">
-          <li>Build a clean, composable enterprise core</li>
-          <li>AI that works inside the enterprise, not bolted onto it</li>
-          <li>Intelligence embedded directly in the workflow</li>
-        </ul>
-        <p class="core-sub">Modern technology. One connected architecture — technology grounded in
-          business reality and shaped by the operating model, not the other way around.</p>
-        <div class="core-tags">
-          <span>Process</span>
-          <span>Data</span>
-          <span>Integration</span>
-          <span>Governance</span>
-          <span>Adoption</span>
+          <div class="cap-row-media col-12 col-lg-7" [style.--accent]="c.color">
+            <button type="button" class="cap-media-frame" (click)="openDetail(c)" [attr.aria-label]="'Enlarge ' + c.name + ' overview'">
+              <img [src]="c.image" [alt]="c.name + ' overview'" loading="lazy" />
+              <span class="cap-media-zoom" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7" /><path d="M21 21l-4.3-4.3M11 8v6M8 11h6" /></svg>
+              </span>
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -161,11 +132,13 @@
       <h2 class="section-head">Technology grounded in business reality.</h2>
       <p class="tech-sub">We select technology for business fit, interoperability, security, and
         long-term maintainability — not novelty alone.</p>
-      <div class="tech-table">
-        <div class="tech-row" *ngFor="let row of techStack">
-          <span class="tech-category">{{ row.category }}</span>
-          <div class="tech-items">
-            <span class="tech-item" *ngFor="let item of row.items">{{ item }}</span>
+      <div class="tech-grid row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-3">
+        <div class="col" *ngFor="let row of techStack">
+          <div class="tech-card" [style.--accent]="row.color">
+            <span class="tech-category">{{ row.category }}</span>
+            <div class="tech-items">
+              <span class="tech-item" *ngFor="let item of row.items">{{ item }}</span>
+            </div>
           </div>
         </div>
       </div>
@@ -181,57 +154,64 @@
         plays.</p>
       <div class="flow-diagram-wrap">
         <gx-flow-diagram></gx-flow-diagram>
+        <div class="delivery">
+          <p class="delivery-head">Move from ECC to an intelligent clean core in four stages.</p>
+          <div class="delivery-row">
+            <ng-container *ngFor="let s of deliveryStages; let last = last">
+              <div class="delivery-stage" [style.--accent]="s.color">
+                <span class="delivery-step">{{ s.step }}</span>
+                <span class="delivery-label">{{ s.label }}</span>
+              </div>
+              <span class="delivery-arrow" *ngIf="!last">→</span>
+            </ng-container>
+          </div>
+        </div>
       </div>
+    </div>
+  </section>
 
-      <div class="delivery">
-        <p class="delivery-head">Move from ECC to an intelligent clean core in four stages.</p>
-        <div class="delivery-row">
-          <ng-container *ngFor="let s of deliveryStages; let last = last">
-            <div class="delivery-stage" [style.--accent]="s.color">
-              <span class="delivery-step">{{ s.step }}</span>
-              <span class="delivery-label">{{ s.label }}</span>
+  <section class="industries" id="industries">
+    <div class="wrap">
+      <p class="eyebrow eyebrow-dark">Where we deliver</p>
+      <h2 class="section-head">Industries we serve.</h2>
+      <p class="industries-sub">Patterns that repeat across sectors, adapted to the economics,
+        regulation, and operating rhythm of each one.</p>
+      <div class="industries-grid row row-cols-2 row-cols-md-4 g-3">
+        <div class="col" *ngFor="let ind of industries">
+          <div class="industry-card" [style.--accent]="ind.color">
+            <div class="industry-icon" [ngSwitch]="ind.code">
+              <svg *ngSwitchCase="'fin'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 21h18M4 21V10l8-6 8 6v11M9 21v-6h6v6" />
+              </svg>
+              <svg *ngSwitchCase="'mfg'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 21V11l6 4v-4l6 4V7l6 4v10H3Z" />
+              </svg>
+              <svg *ngSwitchCase="'retail'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 8h16l-1.5 12h-13L4 8Z" />
+                <path d="M8 8V6a4 4 0 0 1 8 0v2" />
+              </svg>
+              <svg *ngSwitchCase="'health'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 21C7 17 3 13.5 3 9.5 3 6.5 5.5 4 8.5 4c1.7 0 3.1.9 3.5 2 0.4-1.1 1.8-2 3.5-2C18.5 4 21 6.5 21 9.5c0 4-4 7.5-9 11.5Z" />
+              </svg>
+              <svg *ngSwitchCase="'energy'" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z" />
+              </svg>
+              <svg *ngSwitchCase="'logistics'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 7h11v10H3zM14 10h4l3 3v4h-7z" />
+                <circle cx="7" cy="19" r="1.6" />
+                <circle cx="17.5" cy="19" r="1.6" />
+              </svg>
+              <svg *ngSwitchCase="'telecom'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 11a8 8 0 0 1 16 0M7 13a4.5 4.5 0 0 1 10 0" />
+                <circle cx="12" cy="19" r="1.6" fill="currentColor" stroke="none" />
+              </svg>
+              <svg *ngSwitchCase="'public'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 10 12 4l9 6M5 10v9h14v-9M9 19v-5h6v5" />
+              </svg>
             </div>
-            <span class="delivery-arrow" *ngIf="!last">→</span>
-          </ng-container>
+            <span>{{ ind.name }}</span>
+          </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="insights" id="insights">
-    <div class="wrap">
-      <p class="eyebrow eyebrow-dark">Ideas for the next enterprise</p>
-      <h2 class="section-head">Perspectives worth building on.</h2>
-      <div class="insight-grid row row-cols-1 row-cols-md-3 g-4">
-        <div class="col" *ngFor="let i of insights">
-          <a href="#contact" class="insight-card" [style.--accent]="i.color">
-            <span class="insight-tag">{{ i.tag }}</span>
-            <p class="insight-title">{{ i.title }}</p>
-            <span class="insight-read">Read the perspective →</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="knowledge">
-    <div class="wrap knowledge-row row align-items-center g-4">
-      <h2 class="col-12 col-md-6">Transformation lasts<br />when knowledge stays.</h2>
-      <p class="col-12 col-md-6">We combine consulting rigor with practical, hands-on academies,
-        delivery coaching, and embedded AI knowledge — so what we build transfers to your team,
-        not just the workflows, decisions, and people your enterprise actually runs on.</p>
-    </div>
-  </section>
-
-  <section class="faq">
-    <div class="wrap">
-      <p class="eyebrow eyebrow-dark">Common questions</p>
-      <h2 class="section-head">Start with what matters.</h2>
-      <div class="faq-list">
-        <details class="faq-item" *ngFor="let f of faqs">
-          <summary>{{ f.q }}<span class="faq-icon">+</span></summary>
-          <p>{{ f.a }}</p>
-        </details>
       </div>
     </div>
   </section>
@@ -275,8 +255,15 @@
     <div class="footer-links">
       <a href="#capabilities">Capabilities</a>
       <a href="#technology">Technology</a>
-      <a href="#core">Enterprise core</a>
+      <a href="#industries">Industries</a>
       <a href="#contact">Contact</a>
     </div>
   </div>
 </footer>
+
+<div class="detail-overlay" *ngIf="activeDetail" (click)="closeDetail()">
+  <div class="detail-modal" [style.--accent]="activeDetail.color" (click)="$event.stopPropagation()">
+    <button type="button" class="detail-close" (click)="closeDetail()" aria-label="Close">✕</button>
+    <img [src]="activeDetail.image" [alt]="activeDetail.name" class="detail-image" />
+  </div>
+</div>

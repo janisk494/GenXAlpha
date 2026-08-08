@@ -27,16 +27,16 @@ interface FlowLink {
 })
 export class FlowDiagramComponent {
   readonly nodes: FlowNode[] = [
-    { id: 'sap', x: 20, y: 30, w: 190, h: 46, label: 'SAP / ERP core', color: 'var(--c-blue-dark)' },
-    { id: 'data', x: 20, y: 158, w: 190, h: 46, label: 'Data & platforms', color: 'var(--c-aqua-dark)' },
-    { id: 'ops', x: 20, y: 286, w: 190, h: 46, label: 'Ops & CRM systems', color: 'var(--c-magenta-dark)' },
+    { id: 'sap', x: 20, y: 20, w: 190, h: 42, label: 'SAP / ERP core', color: 'var(--c-blue-dark)' },
+    { id: 'data', x: 20, y: 104, w: 190, h: 42, label: 'Data & platforms', color: 'var(--c-aqua-dark)' },
+    { id: 'ops', x: 20, y: 188, w: 190, h: 42, label: 'Ops & CRM systems', color: 'var(--c-magenta-dark)' },
 
-    { id: 'core', x: 425, y: 88, w: 210, h: 56, label: 'Clean, composable core', color: 'var(--signal)' },
-    { id: 'ai', x: 425, y: 230, w: 210, h: 56, label: 'AI & automation layer', color: 'var(--activate)' },
+    { id: 'core', x: 425, y: 56, w: 210, h: 50, label: 'Clean, composable core', color: 'var(--signal)' },
+    { id: 'ai', x: 425, y: 140, w: 210, h: 50, label: 'AI & automation layer', color: 'var(--activate)' },
 
-    { id: 'decisions', x: 850, y: 30, w: 190, h: 46, label: 'Faster decisions', color: 'var(--c-yellow-dark)' },
-    { id: 'cost', x: 850, y: 158, w: 190, h: 46, label: 'Lower cost to serve', color: 'var(--c-violet-dark)' },
-    { id: 'revenue', x: 850, y: 286, w: 190, h: 46, label: 'New revenue plays', color: 'var(--c-orange-dark)' }
+    { id: 'decisions', x: 850, y: 20, w: 190, h: 42, label: 'Faster decisions', color: 'var(--c-yellow-dark)' },
+    { id: 'cost', x: 850, y: 104, w: 190, h: 42, label: 'Lower cost to serve', color: 'var(--c-violet-dark)' },
+    { id: 'revenue', x: 850, y: 188, w: 190, h: 42, label: 'New revenue plays', color: 'var(--c-orange-dark)' }
   ];
 
   readonly links: FlowLink[] = [

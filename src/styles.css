@@ -21,6 +21,10 @@
   --c-violet: #4a3aa7;    --c-violet-dark: #9085e9;
   --c-red: #e34948;       --c-red-dark: #e66767;
 
+  /* brand gradient — blue → violet → magenta. Used for the logo mark,
+     headline accents, and gradient-bordered buttons. */
+  --brand-gradient: linear-gradient(135deg, #4c7dff 0%, #8b5cf6 50%, #e05fc4 100%);
+
   --font-display: 'Space Grotesk', 'Inter', sans-serif;
   --font-body: 'Inter', sans-serif;
   --font-mono: 'IBM Plex Mono', monospace;
